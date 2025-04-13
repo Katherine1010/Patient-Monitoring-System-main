@@ -1,0 +1,35 @@
+{
+  "name": "patient-monitoring-system",
+  "version": "1.0.0",
+  "description": "A microservices-based patient monitoring system with GraphQL APIs",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run auth\" \"npm run user\" \"npm run ai\" \"npm run gateway\"",
+    "auth": "cd backend/services/auth-service && npm start",
+    "user": "cd backend/services/user-service && npm start",
+    "ai": "cd backend/services/ai-service && npm start",
+    "gateway": "cd backend/api-gateway && npm start",
+    "install-all": "npm install && npm run install-auth && npm run install-user && npm run install-ai && npm run install-gateway",
+    "install-auth": "cd backend/services/auth-service && npm install",
+    "install-user": "cd backend/services/user-service && npm install",
+    "install-ai": "cd backend/services/ai-service && npm install",
+    "install-gateway": "cd backend/api-gateway && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/patient-monitoring-system.git"
+  },
+  "keywords": [
+    "healthcare",
+    "patient-monitoring",
+    "microservices",
+    "graphql",
+    "express"
+  ],
+  "author": "Group work",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^8.2.0",
+    "next": "^13.5.11"
+  }
+}
